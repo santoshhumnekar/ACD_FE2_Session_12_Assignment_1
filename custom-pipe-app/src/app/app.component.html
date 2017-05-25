@@ -1,0 +1,25 @@
+<div class="container">
+
+  <nav class="navbar navbar-light bg-inverse navbar-inverse">
+  <a class="navbar-brand">
+    <img src="./favicon.ico" width="10" height="10" class="d-inline-block align-left" alt="">
+    Angular 2 Custom Pipe
+  </a>
+  </nav>
+
+  <hr/>
+
+   <form id="Filter">
+   <label> Search by key: </label>
+   <input type="text" placeholder="Enter the key to search the list" [(ngModel)] = "search" name="search" />
+   </form>
+
+   <hr/>
+
+   <ul class="list-group" *ngFor= 'let data of listData | keyFilter:search'>
+     <li class="list-group-item"> {{data.name}} 
+       <span class="badge badge-default badge-pill"> {{data.age}} </span>
+     </li>
+   </ul>
+
+</div>
